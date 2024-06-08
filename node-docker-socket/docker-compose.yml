@@ -1,0 +1,14 @@
+version: '2'
+services:
+  backend-publisher:
+    build: .
+    ports:
+      - '3000:3000'
+      - '3500:3500'
+      - '5555:5555'
+    networks:
+      - zmq-network
+
+networks:
+  zmq-network:
+    driver: bridge
